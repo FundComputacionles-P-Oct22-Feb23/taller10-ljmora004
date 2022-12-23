@@ -1,0 +1,41 @@
+Inicio
+funcion principal()
+	nota1, d[0-n]
+	nota2, d[0-n]
+	nota3, d[0-n]
+	nota4, d[0-n]
+	<< "Ingrese la primera nota:"
+	>> nota1
+	<< "Ingrese la segunda nota:"
+	>> nota2
+	<< "Ingrese la tercera nota:"
+	>> nota3
+	<< "Ingrese la cuarta nota:"
+	>> nota4
+    resultado, x(100)[{A-Z}, {a-z}, {0-n}, {BS, :}]
+    resulatdo <-- obtenerNotaCualitativa(nota1, nota2, nota3, nota4)
+    << resultado
+Fin funcion principal
+
+funcion obtenerNotaCualitativa(n1, d; n2, d; n3, d; n4, d): x 
+	promedio, d[0-n]
+	promedio <-- (n1 + n2 + n3 + n4)/4
+	mensaje, x(100)[{A-Z}, {a-z}, {0-n}, {BS, :}]  
+	Si promedio >= 0 and promedio <= 5 entonces
+		mensaje <-- "El promedio de las notas " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + " es Regular."
+	De lo contario
+		Si promedio >= 5.1 and promedio <= 8 entonces
+			mensaje <-- "El promedio de las notas " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + " es Bueno."
+		De lo contrario
+			Si promedio >= 8.1 and promedio <= 9 entonces
+				mensaje <-- "El promedio de las notas " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + " es Muy bueno."
+			De lo contrario
+				Si promedio >= 9.1 and promedio <= 10 entonces
+					mensaje <-- "El promedio de las notas " + n1 + ", " + n2 + ", " + n3 + ", " + n4 + " es Sobresaliente." 
+				Fin Si
+			Fin si
+		Fin Si
+	Fin Si
+	retornar mensaje
+Fin funcion obtenerNotaCualitativa
+Fin					 	 	 

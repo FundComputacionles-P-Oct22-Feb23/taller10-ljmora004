@@ -1,0 +1,73 @@
+Inicio
+funcion principal()
+	opcion, i[0-n]
+	<< "Ingrese 1 para calacular el área de un cuadrado.\n
+	Ingrese 2 para calacular el área de un triangulo.\n
+	Ingrese 3 para calacular el área de un rectángulo."
+	>> opcion
+
+	resultado, x(100)[{a-z}, {A-Z}, {BS, *, /, =}]
+	Si opcion == 1 entonces
+		lado1, d[0-n]
+		lado2, d[0-n]
+		lado3, d[0-n]
+		lado4, d[0-n]
+		<< "Ingrse la medida del lado 1:"
+		>> lado1
+		<< "Ingrse la medida del lado 2:"
+		>> lado2
+		<< "Ingrse la medida del lado 3:"
+		>> lado3
+		<< "Ingrse la medida del lado 4:"
+		>> lado4
+		resultado <-- obtenerAreaCuadrado(lado1, lado2, lado3, lado4)
+		<< resultado
+	De lo contario
+		Si opcion == 2 entonces
+			base, d[0-n]
+			altura, d[0-n]	
+			<< "Ingrese la medida de la base:"
+			>> base
+			<< "Ingrese la medida de la altura:"
+			>> altura
+			resultado <-- obtenerAreaTriangulo(base, altura)
+			<< resultado
+		De lo contario
+			base, d[0-n]
+			altura, d[0-n]
+			<< "Ingrese la medida de la base:"
+			>> base
+			<< "Ingrese la medida de la altura:"
+			>> altura
+			resultado <-- obtenerAreaRectangulo(base, altura)
+			<< resultado	
+		Fin Si
+	Fin Si
+Fin funcion principal
+
+funcion obtenerAreaCuadrado(lado1, d; lado2, d; lado3, d; lado4, d;): x
+	operacion, d[0-n]
+	mensaje, x(100)[{A-Z}, {a-z}, {BS, *, =}
+	operacion <-- lado1 * lado2 * lado3 * lado4
+	mensaje <-- "El área del cuadrado es igual a " + lado1 + " * " + lado2 + " * " + 
+	lado3 + " * " + lado4 + " = " + operacion
+	retornar mensaje
+Fin funcion obtenerAreaCuadrado
+
+funcion obtenerAreaTriangulo(base, d; altura, d): x
+	operacion, d[0-n]
+	mensaje, x(100)[{A-Z}, {a-z}, {BS, *, =, /}
+	operacion <-- (base * altura)/2
+	mensaje <-- "El área del triángulo es igual a ( " + base + " * " + altura + " )/2 = " 
+	+ operacion
+	retornar mensaje
+Fin funcion obtenerAreaTriangulo
+
+funcion obtenerAreaRectangulo(base, d; altura, d): x
+	operacion, d[0-n]
+	mensaje, x(100)[{A-Z}, {a-z}, {BS, *, =}
+	operacion <-- base * altura
+	mensaje <-- "El área del rectángulo es igual a " + base + " * " + altura + " = " + operacion
+	retornar mensaje
+Fin funcion obtenerAreaRectangulo
+Fin	
